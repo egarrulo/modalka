@@ -225,6 +225,13 @@ a simple collection of translations that an Emacs user could easily adopt:
 (modalka-define-kbd "SPC" "C-SPC")
 ```
 
+If you want to avoid typing any character when `modalka-mode` is on, then
+add also this line:
+
+```emacs-lisp
+(define-key modalka-mode-map [remap self-insert-command] 'ignore)
+```
+
 For now you can use <kbd>M-x modalka-mode</kbd> to try it. When in normal
 mode (`modalka-mode`) with such a setup, you can kill two lines of text like
 this: <kbd>SPC n n w</kbd>. Note that Modalka can translate sequential key
